@@ -99,7 +99,8 @@ function showStarShips(ships, ep) {
         shipDetailBtn[index].setAttribute('class', 'starbtn');
         shipDetailBtn[index].innerHTML = "show";
         shipDetailBtn[index].onclick = function() {
-            liststart == 0;
+            liststart = 0;
+            // previous_page = 0;
             showstardetail(ship[index], ships, ep);
         };
         shipDetailBtn[index].onmouseover = function() {
