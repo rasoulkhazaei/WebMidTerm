@@ -2,8 +2,6 @@ window.onload = function() {
     loadFilmLists(); /* load films list */
 };
         
-    
-
 function loadFilmLists() {
 
     var url = "https://swapi.dev";
