@@ -29,39 +29,32 @@ div.container {
     max-height: fit-content; /* set the container to the full height of the container */
     
 }
-.grid-container {
+.grid-container { /* container for the grid the film list*/
     display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(200px, auto);
   }
 
-.star-grids{
-    display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(200px, auto);
-  }
-
-.grid-item {
+.grid-item { /* for items in film lists or starship list*/
     padding: 20px;
     border: 1px solid black;
     border-radius: 5px;
     background-color: brown;
     display: flex;
-        align-items: center;
-        justify-content: center;
+    align-items: center;
+    justify-content: center;
 
 }
 
-.b {
+.b {    /* for the buttons in project */
     background-color: #f1f1f1;
     color: black;
     padding: 10px;
     font-size: 15px;
     border-radius: 5px}
 
-.starbtn {
+.starbtn {  /* for back and show starships and next/prev pages buttons */
     padding: 10px;
     width: fit-content;
     border: 1px solid black;
@@ -71,15 +64,15 @@ div.container {
     float: left;
     background-color: brown;
 }
-td {
+td { /* for the details of starship table */
     border: 1px solid #000;
 }
 
-tr td:last-child {
+tr td:last-child { /* for the details of starship table */
     width: 1%;
     white-space: nowrap;
 }
-.column {
+.column { /* for list of starships list in  special film */
     float: left;
     width: 93%;
     padding: 10px;
@@ -87,6 +80,4 @@ tr td:last-child {
     border-radius: 5px;
     background-color: rgb(216, 190, 41);
     display: flex;
-        /* align-items: center; */
-        /* justify-content: center; */
   }
