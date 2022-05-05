@@ -71,6 +71,8 @@ function showStarShips(ships, ep) { // show the ships list in window
     var ship = [];
     if (liststart ==  ships.length - 1) {
         liststart = previous_page;
+    } else if (liststart != 0) {
+        liststart = liststart + 1; // in next page don't show the previous page's latest ship
     }
     previous_page = liststart;
     var start = liststart;
@@ -98,7 +100,7 @@ function showStarShips(ships, ep) { // show the ships list in window
         shipDetailBtn[index].innerHTML = "show";
         shipDetailBtn[index].onclick = function() {
             liststart = 0;
-            // previous_page = 0;
+            previous_page = 0;
             showstardetail(ship[index], ships, ep);
         };
         shipDetailBtn[index].onmouseover = function() {
@@ -127,6 +129,7 @@ function showStarShips(ships, ep) { // show the ships list in window
     backBtn.onclick = function() {
         // document.getElementById('parent-div').innerHTML = "";
         liststart = 0;
+        previous_page = 0;
         history.go(); // go back to the previous page
     }
     document.getElementById('parent-div').appendChild(backBtn); 
@@ -219,7 +222,7 @@ function showstardetail(ship, ships, ep){ // show the ship detail
             });
         }}
     document.getElementById('parent-div').appendChild(tbl)
-    var btn = document.createElement('button'); // back to the previous page button
+    var btn = document.createElement('button'); // back to the previous page button list of ships
     btn.setAttribute('class', 'starbtn');
     btn.innerHTML = "Back";
     btn.onmouseover = function() {
@@ -229,6 +232,8 @@ function showstardetail(ship, ships, ep){ // show the ship detail
         btn.style.backgroundColor = "";
     }
     btn.onclick = function() {
+        liststart = 0;
+        previous_page = 0;
         showshipbtn(ep)
     }
     document.getElementById('parent-div').appendChild(btn);
