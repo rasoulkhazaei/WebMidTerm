@@ -1,0 +1,92 @@
+body, html{
+    margin: 0;      /* remove padding and border from the body */
+    padding: 0;
+    background-image: url('img1.jpg'); /* image to be displayed */
+    background-position: center center; /* center the image */
+    background-repeat: no-repeat; /* do not repeat the image */
+    background-size: cover; /* resize the image to cover the entire container */
+    width: 100vw; /* set the image to the full width of the container */
+    height: 100vh; /* set the image to the full height of the container */
+    min-height: 100%; /* set the image to the full height of the container */
+    overflow: hidden; /* hide the scrollbars */
+}
+
+div.container {
+    padding: 10px;
+    /* circular container */
+    border-radius: 15px;
+    border: 1px solid rgb(0, 0, 0); /* border around the container */
+    /* filter: brightness(2); */
+    opacity:0.75;
+    filter:alpha(opacity=50);
+    background-color:#4f4f86;; 
+    /* background color of the container */
+    position: absolute; /* position the container absolutely */
+    top: 50%; /* position the container 50% from the top */
+    left: 50%; /* position the container 50% from the left */
+    transform: translate(-50%, -50%);
+    max-width: fit-content; /* set the container to the maximum width of the screen */
+    max-height: fit-content; /* set the container to the full height of the container */
+    
+}
+.grid-container {
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(200px, auto);
+  }
+
+.star-grids{
+    display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(200px, auto);
+  }
+
+.grid-item {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: brown;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+
+}
+
+.b {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px}
+
+.starbtn {
+    padding: 10px;
+    width: fit-content;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+    left: 10px;
+    float: left;
+    background-color: brown;
+}
+td {
+    border: 1px solid #000;
+}
+
+tr td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}
+.column {
+    float: left;
+    width: 93%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(216, 190, 41);
+    display: flex;
+        /* align-items: center; */
+        /* justify-content: center; */
+  }
