@@ -65,7 +65,7 @@ function showshipbtn(ep) {  // show the button for show the ships list
 
 }
 var previous_page = 0;
-function showStarShips(ships, ep) {
+function showStarShips(ships, ep) { // show the ships list in window
     document.getElementById('parent-div').innerHTML = "" // clear the div
     var shipDetailBtn = []
     var shipDetailP = []
@@ -84,7 +84,7 @@ function showStarShips(ships, ep) {
         document.getElementById('parent-div').appendChild(d);
         
         shipDetailP[index] = document.createElement('p'); // for show the ship name
-            fetch(ships[index]).
+            fetch(ships[index]). // fetch the ship detail
             then(function(response) {
                 return response.json();
             }
@@ -95,7 +95,7 @@ function showStarShips(ships, ep) {
                 console.log(error);
             });
         
-        shipDetailBtn[index] = document.createElement('button');
+        shipDetailBtn[index] = document.createElement('button'); // for show the ship detail
         shipDetailBtn[index].setAttribute('class', 'starbtn');
         shipDetailBtn[index].innerHTML = "show";
         shipDetailBtn[index].onclick = function() {
@@ -113,13 +113,11 @@ function showStarShips(ships, ep) {
         
        
 
-        t[index] = document.createElement('div');
-        t[index].setAttribute('id', 't' + index);
         document.getElementById('grid-item' + index).appendChild(shipDetailBtn[index]);
         // document.getElementById('t' + index).appendChild(a[index]);
         document.getElementById('grid-item' + index).appendChild(shipDetailP[index]);
     }
-    let backBtn = document.createElement('button');
+    let backBtn = document.createElement('button'); // back to the previous page button
     backBtn.setAttribute('class', 'starbtn');
     backBtn.innerHTML = "Back";
     backBtn.onmouseover = function() {
@@ -180,27 +178,26 @@ function showStarShips(ships, ep) {
 
 }
 
-function showstardetail(ship, ships, ep){
+function showstardetail(ship, ships, ep){ // show the ship detail 
+    // first col features second col values
     document.getElementById('parent-div').innerHTML = ""
     tbl = document.createElement('table');
     tbl.style.width = '100px';
     tbl.style.border = '1px solid black';
-    var r = ['name', 'model', 'manufacturer', 'crew'    , 'passengers']
+    var r = ['name', 'model', 'manufacturer', 'crew', 'passengers']
     
     for (let i = 0; i < 5; i++) {
         const tr = tbl.insertRow();
         td = tr.insertCell();
-        td.appendChild(document.createTextNode(`${r[i]}`));
+        td.appendChild(document.createTextNode(`${r[i]}`));// feature
         td.style.border = '1px solid black';
         td.style.backgroundColor = 'green';
-        // td.style.width = 'fit-content'
         td = tr.insertCell();
-        td.appendChild(document.createTextNode(`${ship[r[i]]}`));
+        td.appendChild(document.createTextNode(`${ship[r[i]]}`));//value
         td.style.border = '1px solid black';
         td.style.backgroundColor = 'red';
-        // td.style.width = 'fit-content'
     }
-    if(ship.films.length > 0){
+    if(ship.films.length > 0){ // for show films of ship
         
         // td.style.width = 'fit-content'
         for (let index = 0; index < ship.films.length; index++) {
@@ -212,7 +209,7 @@ function showstardetail(ship, ships, ep){
             const film = ship.films[index];
             
             fetch(film).
-            then(function(response) {
+            then(function(response) { // fetch the film detail
                 return response.json();
             }
             ).then(function(data) {
@@ -224,7 +221,7 @@ function showstardetail(ship, ships, ep){
             });
         }}
     document.getElementById('parent-div').appendChild(tbl)
-    var btn = document.createElement('button');
+    var btn = document.createElement('button'); // back to the previous page button
     btn.setAttribute('class', 'starbtn');
     btn.innerHTML = "Back";
     btn.onmouseover = function() {
